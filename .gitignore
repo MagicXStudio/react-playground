@@ -102,3 +102,7 @@ dist
 
 # TernJS port file
 .tern-port
+/.vs
+/.vscode
+/src/components/__snapshots__
+/src/features/todos/__snapshots__
