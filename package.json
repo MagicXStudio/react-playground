@@ -1,24 +1,16 @@
 {
-  "name": "playground",
-  "description": "Playground Project for https://github.com/piotrwitek/react-redux-typescript-guide",
-  "version": "1.0.0",
-  "private": true,
-  "author": "Piotr Witek <piotrek.witek@gmail.com> (http://piotrwitek.github.io/)",
-  "repository": "https://github.com/piotrwitek/react-redux-typescript-guide.git",
-  "license": "MIT",
-  "main": "src/index.tsx",
-  "scripts": {
-    "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
-    "test": "node scripts/test.js",
-    "reinstall": "rm -rf node_modules && npm install",
-    "ci-check": "npm run lint && npm run tsc && npm run test",
-    "lint": "tslint -p ./",
-    "tsc": "tsc -p ./ --noEmit",
-    "tsc:watch": "tsc -p ./ --noEmit -w",
-    "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+  "author": "AngkorW <angkor.wu@live.com> (https://github.com/MagicXStudio/react-playground/)",
+  "babel": {
+    "presets": [
+      "react-app"
+    ]
   },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
   "dependencies": {
     "@babel/core": "7.12.3",
     "@pmmmwh/react-refresh-webpack-plugin": "0.4.3",
@@ -94,10 +86,10 @@
     "semver": "7.3.2",
     "style-loader": "1.3.0",
     "terser-webpack-plugin": "4.2.3",
-    "ts-pnp": "1.2.0",
     "tslib": "2.3.0",
     "tslint": "5.20.0",
     "tslint-react": "4.1.0",
+    "ts-pnp": "1.2.0",
     "typesafe-actions": "5.1.0",
     "typescript": "^4.3.5",
     "url-loader": "4.1.1",
@@ -107,12 +99,7 @@
     "webpack-manifest-plugin": "2.2.0",
     "workbox-webpack-plugin": "5.1.4"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
+  "description": "Playground Project for https://github.com/piotrwitek/react-redux-typescript-guide",
   "devDependencies": {
     "@storybook/addon-actions": "5.2.5",
     "@storybook/addon-links": "5.2.5",
@@ -123,6 +110,9 @@
     "@types/storybook__react": "4.0.2",
     "react-test-renderer": "16.11.0",
     "require-context.macro": "1.2.2"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
   },
   "jest": {
     "roots": [
@@ -174,12 +164,22 @@
     ],
     "resetMocks": true
   },
-  "babel": {
-    "presets": [
-      "react-app"
-    ]
+  "license": "MIT",
+  "main": "src/index.tsx",
+  "name": "playground",
+  "private": true,
+  "repository": "https://github.com/piotrwitek/react-redux-typescript-guide.git",
+  "scripts": {
+    "start": "node scripts/start.js",
+    "build": "node scripts/build.js",
+    "test": "node scripts/test.js",
+    "reinstall": "rm -rf node_modules && npm install",
+    "ci-check": "npm run lint && npm run tsc && npm run test",
+    "lint": "tslint -p ./",
+    "tsc": "tsc -p ./ --noEmit",
+    "tsc:watch": "tsc -p ./ --noEmit -w",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  }
+  "version": "1.0.0"
 }
