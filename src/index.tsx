@@ -1,6 +1,7 @@
 // tslint:disable-next-line:no-import-side-effect
 import 'tslib';
 // tslint:disable-next-line:no-import-side-effect
+import 'antd/dist/antd.css'
 import './index.css';
 
 import React from 'react';

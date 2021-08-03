@@ -1,5 +1,5 @@
 import * as React from 'react';
-
+import { Tag ,Button} from 'antd';
 type Props = {
   label: string;
   count: number;
@@ -15,12 +15,12 @@ export const FCCounter: React.FC<Props> = props => {
 
   return (
     <div>
-      <span>
+      <Tag>
         {label}: {count}
-      </span>
-      <button type="button" onClick={handleIncrement}>
+      </Tag>
+      <Button type="link" onClick={handleIncrement}>
         {`Increment`}
-      </button>
+      </Button>
     </div>
   );
 };

@@ -12,6 +12,8 @@
     "not op_mini all"
   ],
   "dependencies": {
+    "antd": "^4.14.0",
+    "@ant-design/icons": "^4.5.0",
     "@babel/core": "7.12.3",
     "@pmmmwh/react-refresh-webpack-plugin": "0.4.3",
     "@svgr/webpack": "5.5.0",
