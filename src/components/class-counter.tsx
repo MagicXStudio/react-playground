@@ -12,10 +12,31 @@ export class ClassCounter extends React.Component<Props, State> {
     readonly state: State = {
         count: 0,
     };
+    componentDidMount() {
+        console.info('componentDidMount');
+    }
+    componentDidCatch() {
+        console.info('componentDidCatch');
+    }
+    componentDidUpdate() {
+        console.info('componentDidUpdate');
+    }
+    componentWillMount() {
+        console.info('componentWillMount');
+    }
+    componentWillReceiveProps() {
+        console.info('componentWillReceiveProps');
+    }
+    componentWillUnmount() {
+        console.info('componentWillUnmount');
+    }
+    componentWillUpdate() {
+        console.info('componentWillUpdate');
+    }
 
     handleIncrement = () => {
         this.setState({ count: this.state.count + 1 });
-    };
+    }
 
     render() {
         const { handleIncrement } = this;
