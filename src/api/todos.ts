@@ -7,16 +7,16 @@ const pageSize = 10;
 // tslint:disable-next-line:no-var-requires
 const todosResponse: ITodoModel[] = require('../fixtures/todos.json');
 export const Todos = {
-  getAll: (pageNumber: number = 0) => resolveWithDelay(todosResponse
-    .slice(pageNumber * pageSize, (pageNumber * pageSize) + pageSize - 1)),
-  get: (id: string) => resolveWithDelay(todosResponse
-    .find(t => t.id === id)),
-  create: (payload: ITodoModel) => resolveWithDelay(todosResponse
-    .push(payload)),
-  update: (payload: ITodoModel) => resolveWithDelay(todosResponse
-    .map(t => t.id === payload.id ? payload : t)),
-  delete: (id: string) => resolveWithDelay(todosResponse
-    .filter(t => t.id !== id)),
+    getAll: (pageNumber: number = 0) => resolveWithDelay(todosResponse
+        .slice(pageNumber * pageSize, (pageNumber * pageSize) + pageSize - 1)),
+    get: (id: string) => resolveWithDelay(todosResponse
+        .find(t => t.id === id)),
+    create: (payload: ITodoModel) => resolveWithDelay(todosResponse
+        .push(payload)),
+    update: (payload: ITodoModel) => resolveWithDelay(todosResponse
+        .map(t => t.id === payload.id ? payload : t)),
+    delete: (id: string) => resolveWithDelay(todosResponse
+        .filter(t => t.id !== id)),
 };
 
 // Real API

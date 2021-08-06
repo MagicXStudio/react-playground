@@ -1,8 +1,8 @@
 import initStoryshots, {
-  multiSnapshotWithOptions,
+    multiSnapshotWithOptions,
 } from '@storybook/addon-storyshots';
 
 initStoryshots({
-  integrityOptions: { cwd: __dirname },
-  test: multiSnapshotWithOptions({}),
+    integrityOptions: { cwd: __dirname },
+    test: multiSnapshotWithOptions({}),
 });

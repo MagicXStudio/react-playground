@@ -3,28 +3,28 @@
 
 // Method 1: using "interface"
 export interface Name extends String {
-  _brand: 'Name';
+    _brand: 'Name';
 }
 const createName = (name: string): Name => {
-  // validation of business rules
-  return name as any;
+    // validation of business rules
+    return name as any;
 };
 
 // Method 2: using "type"
 type Surname = string & { _brand: 'Surname' };
 const createSurname = (surname: string): Surname => {
-  // validation of business rules
-  return surname as any;
+    // validation of business rules
+    return surname as any;
 };
 
 type Person = {
-  name: Name;
-  surname: Surname;
+    name: Name;
+    surname: Surname;
 };
 
 const person: Person = {
-  name: createName('Piotr'),
-  surname: createSurname('Witek'),
+    name: createName('Piotr'),
+    surname: createSurname('Witek'),
 };
 
 // Type system will ensure that the domain objects can only contain correct data

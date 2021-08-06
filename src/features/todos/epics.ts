@@ -7,16 +7,16 @@ import { todosConstants } from '../todos';
 
 // contrived example!!!
 export const logAddAction: Epic<RootAction, RootAction, RootState, Services> = (
-  action$,
-  state$,
-  { logger }
+    action$,
+    state$,
+    { logger }
 ) =>
-  action$.pipe(
-    filter(isOfType(todosConstants.ADD)), // action is narrowed to: { type: "ADD_TODO"; payload: string; }
-    tap(action => {
-      logger.log(
-        `action type must be equal: ${todosConstants.ADD} === ${action.type}`
-      );
-    }),
-    ignoreElements()
-  );
+    action$.pipe(
+        filter(isOfType(todosConstants.ADD)), // action is narrowed to: { type: "ADD_TODO"; payload: string; }
+        tap(action => {
+            logger.log(
+                `action type must be equal: ${todosConstants.ADD} === ${action.type}`
+            );
+        }),
+        ignoreElements()
+    );

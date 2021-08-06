@@ -24,7 +24,7 @@ export default combineReducers<TodosState, TodosAction>({
 
       case TOGGLE:
         return state.map(item =>
-          item.id === action.payload
+            item.id === action.payload
             ? { ...item, completed: !item.completed }
             : item
         );

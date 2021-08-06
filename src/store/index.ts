@@ -13,12 +13,12 @@ import services from '../services';
 export const history = createBrowserHistory();
 
 export const epicMiddleware = createEpicMiddleware<
-  RootAction,
-  RootAction,
-  RootState,
-  Services
+    RootAction,
+    RootAction,
+    RootState,
+    Services
 >({
-  dependencies: services,
+    dependencies: services,
 });
 
 const routerMiddleware = createRouterMiddleware(history);

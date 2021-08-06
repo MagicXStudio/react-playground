@@ -1,17 +1,17 @@
 import * as React from 'react';
 
 interface NameProviderProps {
-  children: (state: NameProviderState) => React.ReactNode;
+    children: (state: NameProviderState) => React.ReactNode;
 }
 
 interface NameProviderState {
-  readonly name: string;
+    readonly name: string;
 }
 
 export class NameProvider extends React.Component<NameProviderProps, NameProviderState> {
-  readonly state: NameProviderState = { name: 'Piotr' };
+    readonly state: NameProviderState = { name: 'Piotr' };
 
-  render() {
-    return this.props.children(this.state);
-  }
+    render() {
+        return this.props.children(this.state);
+    }
 }

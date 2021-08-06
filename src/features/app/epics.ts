@@ -8,18 +8,18 @@ const SAVING_DELAY = 1000;
 
 // persist state in local storage every 1s
 const saveStateInLocalStorage: Epic<
-  RootAction,
-  RootAction,
-  RootState,
-  Services
+    RootAction,
+    RootAction,
+    RootState,
+    Services
 > = (action$, store) =>
-  action$.pipe(
-    debounceTime(SAVING_DELAY),
-    tap(action => {
-      // handle side-effects
-      saveState(store.value);
-    }),
-    ignoreElements()
-  );
+        action$.pipe(
+            debounceTime(SAVING_DELAY),
+            tap(action => {
+                // handle side-effects
+                saveState(store.value);
+            }),
+            ignoreElements()
+        );
 
 export const epics = combineEpics(saveStateInLocalStorage);

@@ -1,13 +1,13 @@
 import * as React from 'react';
 import ThemeContext from '../context/theme-context';
 
-type Props = {};
+type Props = { name: string };
 
 export default function ThemeToggleButton(props: Props) {
-  const { theme, toggleTheme } = React.useContext(ThemeContext);
-  return (
-    <button onClick={toggleTheme} style={theme} >
-      Toggle Theme
-    </button>
-  );
+    const { theme, toggleTheme } = React.useContext(ThemeContext);
+    return (
+        <button onClick={toggleTheme} style={theme} >
+            Toggle Theme
+        </button>
+    );
 }

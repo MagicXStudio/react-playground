@@ -7,20 +7,20 @@ import { ADD, INCREMENT } from './constants';
 export type CountersAction = ActionType<typeof counters>;
 
 export type CountersState = {
-  readonly reduxCounter: number;
+    readonly reduxCounter: number;
 };
 
 export default combineReducers<CountersState, CountersAction>({
-  reduxCounter: (state = 0, action) => {
-    switch (action.type) {
-      case INCREMENT:
-        return state + 1; // action: { type: "INCREMENT"; }
+    reduxCounter: (state = 0, action) => {
+        switch (action.type) {
+            case INCREMENT:
+                return state + 1; // action: { type: "INCREMENT"; }
 
-      case ADD:
-        return state + action.payload; // action: { type: "ADD"; payload: number; }
+            case ADD:
+                return state + action.payload; // action: { type: "ADD"; payload: number; }
 
-      default:
-        return state;
-    }
-  },
+            default:
+                return state;
+        }
+    },
 });

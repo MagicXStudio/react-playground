@@ -5,9 +5,9 @@ import { action } from '@storybook/addon-actions';
 import { FCCounter } from '../components';
 
 storiesOf('FCCounter', module).add('default', () => (
-  <FCCounter
-    label={'FCCounter'}
-    count={0}
-    onIncrement={action('onIncrement')}
-  />
+    <FCCounter
+        label={'FCCounter'}
+        count={0}
+        onIncrement={action('onIncrement')}
+    />
 ));

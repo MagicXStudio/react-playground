@@ -8,45 +8,45 @@ import { logAddAction } from './epics';
 // Simple typesafe mock of all the services, you dont't need to mock anything else
 // It is decoupled and reusable for all your tests, just put it in a separate file
 const services = {
-  logger: {
-    log: jest.fn<Services['logger']['log']>(),
-  },
-  localStorage: {
-    loadState: jest.fn<Services['localStorage']['loadState']>(),
-    saveState: jest.fn<Services['localStorage']['saveState']>(),
-  },
+    logger: {
+        log: jest.fn<Services['logger']['log']>(),
+    },
+    localStorage: {
+        loadState: jest.fn<Services['localStorage']['loadState']>(),
+        saveState: jest.fn<Services['localStorage']['saveState']>(),
+    },
 };
 
 describe('Todos Epics', () => {
-  let state$: StateObservable<RootState>;
+    let state$: StateObservable<RootState>;
 
-  beforeEach(() => {
-    state$ = new StateObservable<RootState>(
-      new Subject<RootState>(),
-      undefined as any
-    );
-  });
-
-  describe('logging todos actions', () => {
     beforeEach(() => {
-      services.logger.log.mockClear();
+        state$ = new StateObservable<RootState>(
+            new Subject<RootState>(),
+            undefined as any
+        );
     });
 
-    it('should call the logger service when adding a new todo', done => {
-      const addTodoAction = add('new todo');
-      const action$ = ActionsObservable.of(addTodoAction);
+    describe('logging todos actions', () => {
+        beforeEach(() => {
+            services.logger.log.mockClear();
+        });
 
-      logAddAction(action$, state$, services)
-        .toPromise()
-        .then((outputAction: RootAction) => {
-          expect(services.logger.log).toHaveBeenCalledTimes(1);
-          expect(services.logger.log).toHaveBeenCalledWith(
-            'action type must be equal: todos/ADD === todos/ADD'
-          );
-          // expect output undefined because we're using "ignoreElements" in epic
-          expect(outputAction).toEqual(undefined);
-          done();
+        it('should call the logger service when adding a new todo', done => {
+            const addTodoAction = add('new todo');
+            const action$ = ActionsObservable.of(addTodoAction);
+
+            logAddAction(action$, state$, services)
+                .toPromise()
+                .then((outputAction: RootAction) => {
+                    expect(services.logger.log).toHaveBeenCalledTimes(1);
+                    expect(services.logger.log).toHaveBeenCalledWith(
+                        'action type must be equal: todos/ADD === todos/ADD'
+                    );
+                    // expect output undefined because we're using "ignoreElements" in epic
+                    expect(outputAction).toEqual(undefined);
+                    done();
+                });
         });
     });
-  });
 });

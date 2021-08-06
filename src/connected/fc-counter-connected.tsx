@@ -5,14 +5,14 @@ import { countersActions, countersSelectors } from '../features/counters';
 import { FCCounter } from '../components';
 
 const mapStateToProps = (state: Types.RootState) => ({
-  count: countersSelectors.getReduxCounter(state.counters),
+    count: countersSelectors.getReduxCounter(state.counters),
 });
 
 const dispatchProps = {
-  onIncrement: countersActions.increment,
+    onIncrement: countersActions.increment,
 };
 
 export const FCCounterConnected = connect(
-  mapStateToProps,
-  dispatchProps
+    mapStateToProps,
+    dispatchProps
 )(FCCounter);

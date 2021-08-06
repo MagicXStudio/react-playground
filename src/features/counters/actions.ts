@@ -1,11 +1,12 @@
 /* eslint-disable */
 import { action } from 'typesafe-actions';
 
-import { ADD, INCREMENT } from './constants';
+import { ADD, INCREMENT, DECREMENT } from './constants';
 
 /* SIMPLE API */
 
 export const increment = () => action(INCREMENT);
+export const decrement = () => action(DECREMENT);
 export const add = (amount: number) => action(ADD, amount);
 
 /* ADVANCED API */
@@ -24,6 +25,6 @@ export const payloadAction = createAction(ADD)<number>();
 export const payloadMetaAction = createAction(ADD)<number, string>();
 
 export const payloadCreatorAction = createAction(
-  'TOGGLE_TODO',
-  (todo: Todo) => todo.id
+    'TOGGLE_TODO',
+    (todo: Todo) => todo.id
 )<string>();
