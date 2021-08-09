@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, Tag } from 'antd';
+import { Button, Tag, Card } from 'antd';
 type Props = {
     label: string;
 };
@@ -44,14 +44,14 @@ export class ClassCounter extends React.Component<Props, State> {
         const { count } = this.state;
 
         return (
-            <div>
+            <Card>
                 <Tag>
                     {label}: {count}
                 </Tag>
                 <Button type="primary" onClick={handleIncrement}>
                     {`Increment`}
                 </Button>
-            </div>
+            </Card>
         );
     }
 }

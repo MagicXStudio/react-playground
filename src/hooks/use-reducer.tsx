@@ -1,5 +1,5 @@
 import * as React from 'react';
-
+import { Card, Button } from 'antd';
 interface State {
     count: number;
 }
@@ -29,13 +29,12 @@ function Counter({ initialCount }: CounterProps) {
     });
 
     return (
-        <>
+        <Card>
             Count: {state.count}
-            <button onClick={() => dispatch({ type: 'reset' })}>Reset</button>
-            <button onClick={() => dispatch({ type: 'increment' })}>+</button>
-            <button onClick={() => dispatch({ type: 'decrement' })}>-</button>
-        </>
+            <Button onClick={() => dispatch({ type: 'reset' })}>Reset</Button>
+            <Button onClick={() => dispatch({ type: 'increment' })}>+</Button>
+            <Button onClick={() => dispatch({ type: 'decrement' })}>-</Button>
+        </Card>
     );
 }
-
 export default Counter;

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Card } from 'antd'
 
 export interface GenericListProps<T> {
     items: T[];
@@ -10,9 +11,9 @@ export class GenericList<T> extends React.Component<GenericListProps<T>, Record<
         const { items, itemRenderer } = this.props;
 
         return (
-            <div>
+            <Card>
                 {items.map(itemRenderer)}
-            </div>
+            </Card>
         );
     }
 }

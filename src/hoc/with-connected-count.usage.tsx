@@ -1,5 +1,4 @@
 import * as React from 'react';
-
 import { withConnectedCount } from '../hoc';
 import { FCCounter } from '../components';
 

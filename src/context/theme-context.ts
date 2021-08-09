@@ -9,12 +9,12 @@ type Themes = {
 
 export const themes: Themes = {
     dark: {
-        color: 'black',
+        color: 'red',
         backgroundColor: 'white',
     },
     light: {
         color: 'white',
-        backgroundColor: 'black',
+        backgroundColor: 'red',
     },
 };
 

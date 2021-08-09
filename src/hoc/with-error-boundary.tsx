@@ -1,5 +1,4 @@
 import React from 'react';
-
 const MISSING_ERROR = 'Error was swallowed during propagation.';
 
 export const withErrorBoundary = <BaseProps extends Record<string, unknown>>(

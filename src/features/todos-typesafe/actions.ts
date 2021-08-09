@@ -1,6 +1,5 @@
 import cuid from 'cuid';
 import { createAction } from 'typesafe-actions';
-
 import { TodosFilter, Todo } from './models';
 
 const ADD = 'todos/ADD';

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import ThemeContext from './theme-context';
-
+import { Button } from 'antd'
 type Props = {};
 
 export class ToggleThemeButtonClass extends React.Component<Props> {
@@ -10,9 +10,9 @@ export class ToggleThemeButtonClass extends React.Component<Props> {
     render() {
         const { theme, toggleTheme } = this.context;
         return (
-            <button style={theme} onClick={toggleTheme}>
+            <Button style={theme} onClick={toggleTheme}>
                 Toggle Theme
-            </button>
+            </Button>
         );
     }
 }

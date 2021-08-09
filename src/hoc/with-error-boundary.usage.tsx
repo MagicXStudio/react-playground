@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { Button } from 'antd'
 import { withErrorBoundary } from '../hoc';
 import { ErrorMessage } from '../components';
 
@@ -19,14 +19,14 @@ const BrokenButton = () => {
     }
 
     return (
-        <button
-            type="button"
+        <Button
+            type="primary"
             onClick={() => {
                 setShouldRenderBrokenComponent(true);
             }}
         >
             {`Throw nasty error`}
-        </button>
+        </Button>
     );
 };
 

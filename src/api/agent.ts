@@ -8,8 +8,6 @@ const formatToken = (token: string | null) => {
     return token && `Token ${token}`;
 };
 
-// Public
-
 export const setToken = (token: string | null) => {
     agentInstance.defaults.headers.common.Authorization = formatToken(token);
 };

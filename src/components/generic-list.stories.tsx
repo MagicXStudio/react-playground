@@ -5,9 +5,9 @@ import { IUser, User } from '../models';
 import { GenericList } from '../components';
 
 const users = [
-    new User('Rosamonte', 'Especial'),
-    new User('Aguantadora', 'Despalada'),
-    new User('Taragui', 'Vitality'),
+    new User('Lucy', 'Â«Ïª'),
+    new User('Aguantadora', 'Îé¶û·ò'),
+    new User('Taragui', '°²µÂÂ³'),
 ];
 
 export class UserList extends GenericList<IUser> { }

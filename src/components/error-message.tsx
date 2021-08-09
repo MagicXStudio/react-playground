@@ -1,10 +1,10 @@
 import * as React from 'react';
-
+import { Card } from 'antd';
 export const ErrorMessage: React.FC<{ onReset: () => void }> = ({
     onReset,
 }) => {
     return (
-        <div>
+        <Card>
             <h2>{`Sorry there was an unexpected error`}</h2>
             {`To continue: `}
             <a
@@ -15,7 +15,7 @@ export const ErrorMessage: React.FC<{ onReset: () => void }> = ({
             >
                 {`go to home page`}
             </a>
-        </div>
+        </Card>
     );
 };
 
