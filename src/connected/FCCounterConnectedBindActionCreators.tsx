@@ -9,7 +9,6 @@ export const actionCreators = {
     onDecrement: () => ({ type: 'DECREMENT' })
 };
 
-
 const mapStateToProps = (state: Types.RootState) => ({
     count: state.counters.reduxCounter,
 });
@@ -18,7 +17,6 @@ const mapDispatchToProps = (dispatch: Dispatch<Types.RootAction>) => {
     const counterActions = bindActionCreators(actionCreators, dispatch);
     return counterActions;
 }
-
 
 type Props = ReturnType<typeof mapStateToProps> &
     ReturnType<typeof mapDispatchToProps> & {
@@ -29,11 +27,10 @@ export const FCCounter: React.FC<Props> = props => {
     const { label, count, onIncrement } = props;
 
     const handleIncrement = () => {
-        // const x= onIncrement();
-        console.log(countersActions);
-        onIncrement();
+        const x = onIncrement();
+        countersActions.add(1)
+        console.log(x);
     };
-
     return (
         <div>
             <span>
