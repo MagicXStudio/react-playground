@@ -1,4 +1,4 @@
-export const resolveWithDelay = <T>(value: T, time: number = 1000) => new Promise(
+export const resolveWithDelay = <T>(value: T, time = 1000) => new Promise(
     (resolve) => setTimeout(() => resolve(value), time)
 );
 
