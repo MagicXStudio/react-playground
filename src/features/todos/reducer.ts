@@ -1,6 +1,5 @@
 import { combineReducers } from 'redux';
 import { ActionType } from 'typesafe-actions';
-
 import { Todo, TodosFilter } from './models';
 import * as actions from './actions';
 import { ADD, CHANGE_FILTER, TOGGLE } from './constants';

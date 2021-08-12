@@ -1,6 +1,6 @@
 /* eslint-disable */
-import { action } from 'typesafe-actions';
-
+import { action, createAction } from 'typesafe-actions';
+import { Todo } from '../todos/models';
 import { ADD, INCREMENT, DECREMENT } from './constants';
 
 /* SIMPLE API */
@@ -17,8 +17,7 @@ export const add = (amount: number) => action(ADD, amount);
 // This will allow to completely eliminate need for "constants" in your application, more info here:
 // https://github.com/piotrwitek/typesafe-actions#constants
 
-import { createAction } from 'typesafe-actions';
-import { Todo } from '../todos/models';
+
 
 export const emptyAction = createAction(INCREMENT)<void>();
 export const payloadAction = createAction(ADD)<number>();
