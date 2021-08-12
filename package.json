@@ -12,7 +12,6 @@
     "not op_mini all"
   ],
   "dependencies": {
-    "antd": "^4.14.0",
     "@ant-design/icons": "^4.5.0",
     "@babel/core": "7.12.3",
     "@pmmmwh/react-refresh-webpack-plugin": "0.4.3",
@@ -27,6 +26,7 @@
     "@types/react-router-dom": "5.1.2",
     "@typescript-eslint/eslint-plugin": "^4.5.0",
     "@typescript-eslint/parser": "^4.5.0",
+    "antd": "^4.14.0",
     "axios": "^0.19.0",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.6.0",
@@ -101,12 +101,12 @@
     "webpack-manifest-plugin": "2.2.0",
     "workbox-webpack-plugin": "5.1.4"
   },
-  "description": "Playground Project for https://github.com/piotrwitek/react-redux-typescript-guide",
+  "description": "Playground  for https://github.com/piotrwitek/react-redux-typescript-guide",
   "devDependencies": {
     "@storybook/addon-actions": "5.2.5",
     "@storybook/addon-links": "5.2.5",
-    "@storybook/addon-storyshots": "5.2.5",
     "@storybook/addons": "5.2.5",
+    "@storybook/addon-storyshots": "5.2.5",
     "@storybook/react": "5.2.5",
     "@types/storybook__addon-storyshots": "5.1.1",
     "@types/storybook__react": "4.0.2",
@@ -117,37 +117,10 @@
     "extends": "react-app"
   },
   "jest": {
-    "roots": [
-      "<rootDir>/src"
-    ],
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
       "!src/**/*.d.ts"
     ],
-    "setupFiles": [
-      "react-app-polyfill/jsdom"
-    ],
-    "setupFilesAfterEnv": [],
-    "testMatch": [
-      "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
-      "<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}"
-    ],
-    "testEnvironment": "jsdom",
-    "testRunner": "D:\\FTP\\react-playground\\node_modules\\jest-circus\\runner.js",
-    "transform": {
-      "^.+\\.(js|jsx|mjs|cjs|ts|tsx)$": "<rootDir>/config/jest/babelTransform.js",
-      "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
-      "^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
-    },
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|cjs|ts|tsx)$",
-      "^.+\\.module\\.(css|sass|scss)$"
-    ],
-    "modulePaths": [],
-    "moduleNameMapper": {
-      "^react-native$": "react-native-web",
-      "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
-    },
     "moduleFileExtensions": [
       "web.js",
       "js",
@@ -160,11 +133,38 @@
       "jsx",
       "node"
     ],
+    "moduleNameMapper": {
+      "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy",
+      "^react-native$": "react-native-web"
+    },
+    "modulePaths": [],
+    "resetMocks": true,
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "setupFiles": [
+      "react-app-polyfill/jsdom"
+    ],
+    "setupFilesAfterEnv": [],
+    "testEnvironment": "jsdom",
+    "testMatch": [
+      "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
+      "<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}"
+    ],
+    "testRunner": "D:\\FTP\\react-playground\\node_modules\\jest-circus\\runner.js",
+    "transform": {
+      "^.+\\.(js|jsx|mjs|cjs|ts|tsx)$": "<rootDir>/config/jest/babelTransform.js",
+      "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
+      "^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+    },
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|cjs|ts|tsx)$",
+      "^.+\\.module\\.(css|sass|scss)$"
+    ],
     "watchPlugins": [
       "jest-watch-typeahead/filename",
       "jest-watch-typeahead/testname"
-    ],
-    "resetMocks": true
+    ]
   },
   "license": "MIT",
   "main": "src/index.tsx",
@@ -172,16 +172,16 @@
   "private": true,
   "repository": "https://github.com/piotrwitek/react-redux-typescript-guide.git",
   "scripts": {
-    "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js",
-    "reinstall": "rm -rf node_modules && npm install",
+    "build-storybook": "build-storybook -s public",
     "ci-check": "npm run lint && npm run tsc && npm run test",
     "lint": "tslint -p ./",
-    "tsc": "tsc -p ./ --noEmit",
-    "tsc:watch": "tsc -p ./ --noEmit -w",
+    "reinstall": "rm -rf node_modules && npm install",
+    "start": "node scripts/start.js",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+    "test": "node scripts/test.js",
+    "tsc": "tsc -p ./ --noEmit",
+    "tsc:watch": "tsc -p ./ --noEmit -w"
   },
   "version": "1.0.0"
 }
