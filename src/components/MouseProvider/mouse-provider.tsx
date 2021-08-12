@@ -22,7 +22,7 @@ export class MouseProvider extends React.Component<MouseProviderProps, MouseProv
 
     render() {
         return (
-            <Card style={{ height: '100%' }} onMouseMove={this.handleMouseMove}>
+            <Card style={{ height: '100%', backgroundColor: 'green', color: 'red' }} onMouseMove={this.handleMouseMove}>
                 {this.props.render(this.state)}
             </Card>
         );

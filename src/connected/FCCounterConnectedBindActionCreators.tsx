@@ -2,21 +2,19 @@ import Types from 'MyTypes';
 import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import * as React from 'react';
-import { countersActions } from '../features/counters';
+import { Card, Button, Tag, InputNumber } from 'antd';
 
 export const actionCreators = {
-    onIncrement: () => ({ type: 'INCREMENT' }),
-    onDecrement: () => ({ type: 'DECREMENT' })
+    onIncrement: () => ({ type: 'counters/INCREMENT' }),
+    onDecrement: () => ({ type: 'counters/DECREMENT' }),
+    onAdd: (value: number) => ({ type: 'counters/ADD' }),
 };
 
 const mapStateToProps = (state: Types.RootState) => ({
     count: state.counters.reduxCounter,
 });
 
-const mapDispatchToProps = (dispatch: Dispatch<Types.RootAction>) => {
-    const counterActions = bindActionCreators(actionCreators, dispatch);
-    return counterActions;
-}
+const mapDispatchToProps = (dispatch: Dispatch<Types.RootAction>) => bindActionCreators(actionCreators, dispatch);
 
 type Props = ReturnType<typeof mapStateToProps> &
     ReturnType<typeof mapDispatchToProps> & {
@@ -24,22 +22,23 @@ type Props = ReturnType<typeof mapStateToProps> &
     };
 
 export const FCCounter: React.FC<Props> = props => {
-    const { label, count, onIncrement } = props;
-
-    const handleIncrement = () => {
-        const x = onIncrement();
-        countersActions.add(1)
-        console.log(x);
-    };
+    const { label, count, onIncrement, onDecrement, onAdd } = props;
     return (
-        <div>
-            <span>
+        <Card>
+            <Tag>
                 {label}: {count}
-            </span>
-            <button type="button" onClick={handleIncrement}>
-                {`Increment`}
-            </button>
-        </div>
+            </Tag>
+            <Button type="primary" onClick={onIncrement}>
+                {`+ Increment`}
+            </Button>
+            <Button type="primary" onClick={onDecrement}>
+                {`- Decrement`}
+            </Button>
+            <InputNumber value={count}></InputNumber>
+            <Button type="primary" onClick={() => { onAdd(10) }}>
+                {`Math.pow`}
+            </Button>
+        </Card>
     );
 };
 

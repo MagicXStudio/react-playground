@@ -9,7 +9,7 @@ interface NameProviderState {
 }
 
 export class NameProvider extends React.Component<NameProviderProps, NameProviderState> {
-    readonly state: NameProviderState = { name: 'Piotr' };
+    readonly state: NameProviderState = { name: 'AngkorW' };
 
     render() {
         return this.props.children(this.state);
