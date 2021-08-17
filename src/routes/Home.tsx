@@ -10,6 +10,7 @@ import { WithState } from '../hoc/WithState';
 import WithConnectedCount from '../hoc/WithConnectedCount';
 
 import FCCounterConnected from '../connected/FCCounterConnected';
+import FCCartConnected from '../connected/FCCartConnected';
 import FCCounterConnectedBindActionCreators from '../connected/FCCounterConnectedBindActionCreators';
 import FCCounterConnectedOwnProps from '../connected/FCCounterConnectedOwnProps';
 
@@ -59,6 +60,7 @@ const home = (): any => {
                 <Card>
                     <Tag>connected</Tag>
                     <FCCounterConnected label={'FCCounterConnected'} />
+                    <FCCartConnected label={'FCCartConnected'} />
                     <FCCounterConnectedBindActionCreators
                         label={'FCCounterConnectedBindActionCreators'}
                     />

@@ -11,24 +11,9 @@ import {
 } from './constants';
 
 export const getAllProducts = () => action(GET_ALL_PRODUCTS);
-export const receiveProducts = (products: product) => action(RECEIVE_PRODUCTS, products);
-
-export function addToCart(productId: number) {
-    return action(ADD_TO_CART, productId);
-}
-
-export function removeFromCart(productId: number) {
-    return action(REMOVE_FROM_CART, productId);
-}
-
-export function checkout() {
-    return action(CHECKOUT_REQUEST)
-}
-
-export function checkoutSuccess(cart: product) {
-    return action(CHECKOUT_SUCCESS, cart);
-}
-
-export function checkoutFailure(error: string) {
-    return action(CHECKOUT_FAILURE, error);
-}
+export const receiveProducts = (products: Array<product>) => action(RECEIVE_PRODUCTS, products);
+export const addToCart = (productId: number) => action(ADD_TO_CART, productId);
+export const removeFromCart = (productId: number) => action(REMOVE_FROM_CART, productId);
+export const checkout = () => action(CHECKOUT_REQUEST)
+export const checkoutSuccess = (cart: product) => action(CHECKOUT_SUCCESS, cart);
+export const checkoutFailure = (error: string) => action(CHECKOUT_FAILURE, error);

@@ -24,7 +24,6 @@ export const epicMiddleware = createEpicMiddleware<
 
 const sagaMiddleware = createSagaMiddleware()
 
-
 const routerMiddleware = createRouterMiddleware(history);
 
 // configure middlewares

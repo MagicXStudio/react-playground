@@ -4,18 +4,19 @@ import { take, put, call, fork, select, takeEvery, all } from 'redux-saga/effect
 import * as actions from '../features/cart/actions'
 import { getCart } from '../features/cart/reducer'
 import { api } from '../services'
+import { product} from '../models/product'
 import {
     GET_ALL_PRODUCTS,
     CHECKOUT_REQUEST
 } from '../features/cart/constants';
 export function* getAllProducts() {
-    const products = yield call(api.getProducts)
+    const products: Array<product> = yield call(api.getProducts)
     yield put(actions.receiveProducts(products))
 }
 
 export function* checkout() {
     try {
-        const cart = yield select(getCart)
+        const cart: product = yield select(getCart)
         yield call(api.buyProducts, cart)
         yield put(actions.checkoutSuccess(cart))
     } catch (error) {
